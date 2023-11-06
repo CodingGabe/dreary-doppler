@@ -1,0 +1,17 @@
+---
+
+import { getCollection } from "astro:content";
+import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
+const posts = await getCollection("posts");
+
+---
+
+<Layout title="Astroworld | Blog">
+	<main class="px-24 max-w-7xl mx-auto w-full max-sm-24">
+		<h1 class="text-4xl text-white">Astroworld Blog Page</h1>
+        {posts.map(post => (
+            <PostList posts={posts}/>
+        ))}
+	</main>
+</Layout>

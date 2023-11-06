@@ -1,0 +1,28 @@
+---
+author: gabe-amaya
+categories: ["astro js tips react"]
+date: 11/06/2023
+featured: false
+image: ./post-images/astro-thumb.png
+title: Welcome to my new Blog built with Astro
+---
+
+## Intro
+
+In today's digital age, creating an engaging and high-performing blog is essential for sharing your thoughts and ideas with the world. Static site generators have gained popularity due to their ability to deliver fast-loading, secure, and easily maintainable websites. If you're considering starting a blog, one static site generator that's gaining traction is Astro.js. I have built one in the past for my gaming blog using Gatsby and loved it. I had, since, moved on to do other things for professional work with marketing and doing landing pages, components etc however I have fallen in love with creating more content and, once again, working on growing an online presence.
+
+This has led me to find the newest and best tech for my goals and Astro was it. The sheer speed, docs, support, tech stack, I knew I needed to go out and build with it.
+
+Astro.js is a revolutionary static site generator known for its performance and developer-friendly features. Whether you're new to web development or an experienced developer looking for a faster and more efficient way to create a blog, Astro.js is a great choice.
+
+## Brief intro of what is Astro
+
+Astro is a powerful static site generator designed for modern web development. It offers a unique approach to building websites that can significantly improve the performance and user experience of your blog.  It's built with performance in mind. It optimizes your website by default, delivering blazingly ⚡️ fast load times. This is crucial for retaining and engaging your blog's visitors.
+
+Not just React, but Astro also gives you the freedom to use your preferred technologies and tools. It supports popular web frameworks like React, Svelte, and Vue, allowing you to work with the tools you're comfortable with.
+
+As mentioned, it has a ton of support and is Developer-friendly. Astro streamlines the development process, making it easy to create and manage your blog. Its simple and intuitive configuration system lets you focus on writing content and designing your blog rather than wrestling with complex build processes.
+
+Astro also comes packed with SEO Benefits; Static site generators are inherently SEO-friendly, and Astro is no exception. By delivering optimized, static HTML pages, your blog will rank better in search engines, attracting more organic traffic. No need for all of that insane fluff and spaghetti code that WordPress creates. No more hacking around doing outdated SEO practices with WordPress.
+
+In the next post, I will briefly explain the steps to create a blog using Astro that are easy to follow.
