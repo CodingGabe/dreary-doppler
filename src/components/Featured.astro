@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import { type CollectionEntry } from 'astro:content';
+import PostList from '../components/PostList.astro';
+import { getCollection } from "astro:content";
+
+type Props = {
+    post: CollectionEntry<'posts'>;
+    cardTitle: string;
+};
+
+const posts = await getCollection("posts");
+const post = posts[0]; // Gets most recent post
+const tags = [...new Set(posts.map((post) => post.data.tags).flat())]; // map through all tags on a blog post
+const cardTitle = "Blog Post Title";
+---
+
+<section class="flex py-16">
+    <div class="container mx-auto px-4">
+        {post ? (
+            <article class="featured-card text-white max-w-3xl mx-auto grid grid-cols-2 gap-8 items-center p-8 rounded shadow relative z-10">
+                <div class="featured-left-card">
+                    <div class="mb-4">
+                        {post.data.tags && post.data.tags.map((tag, index) => (
+                            <span key={index} class="category-badge text-xs leading-5 mr-3 inline-block px-2 pb-1 rounded-sm">{tag}</span>
+                        ))}
+                    </div>
+                    <a href={`/blog/${post.slug}`}>
+                        <h3 class="text-2xl text-white mb-4">{post.data.title}</h3>
+                    </a>
+                    <p class="text-zinc-300 text-md line-clamp-2">
+                            {post.data.excerpt}
+                    </p>
+                </div>
+                <div class="featured-card-right">
+                    <a href={`/blog/${post.slug}`}>
+                        {post.data.image && (
+                            <Image 
+                                src={post.data.image}
+                                width={600}
+                                height={600 / 1.5}
+                                alt={post.data.title}
+                                class="rounded shadow-xl mt-6 mb-6 aspect-thumbnail object-cover"
+                            />
+                        )}
+                    </a>
+                </div>
+            </article>
+        ) : (
+            <p>Loading...</p>
+        )}
+    </div>
+</section>
+
+<style>
+    .featured-card {
+        background-color: var(--color-accent-dark);
+        margin-top: -6rem
+    }
+    .category-badge {
+        background-color: var(--color-jungle)
+;    }
+</style>

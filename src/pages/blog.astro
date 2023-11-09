@@ -3,15 +3,25 @@
 import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import PostList from '../components/PostList.astro';
+
 const posts = await getCollection("posts");
+const blogPageTitle = "Blog Post"
 
 ---
 
 <Layout title="Astroworld | Blog">
 	<main class="px-24 max-w-7xl mx-auto w-full max-sm-24">
-		<h1 class="text-4xl text-white">Astroworld Blog Page</h1>
-        {posts.map(post => (
-            <PostList posts={posts}/>
-        ))}
+		<section id="blog-page-hero" class="flex text-center items-center justify-center">
+            <div class="container px-4 mx-auto">
+                <div class="rounded bg-gradient-to-b from-black px-8 py-14">
+                    <h1 class="text-4xl text-white text-center">{blogPageTitle}</h1>
+                </div>
+            </div>
+        </section>
+        <section id="blog-posts" class="py-14">
+            <div class="container px-4 mx-auto">
+                <PostList posts={posts}/>
+            </div>
+        </section>
 	</main>
 </Layout>

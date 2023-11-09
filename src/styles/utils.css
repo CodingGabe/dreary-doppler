@@ -1,0 +1,68 @@
+:root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+    );
+    --color-primary: #E9C7C1;
+    --color-secondary: #d1ccdc;
+    --color-jungle: #424c55;
+    --color-sand: #b1918c;
+    --color-grape: #494454;
+    --color-accent-dark: rgb(34,34,34);
+}
+html {
+    font-family: system-ui, sans-serif;
+    background: rgb(28,28,28);
+}
+code {
+    font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+}
+@font-face {
+    font-family: "Agbalumo";
+    src: url("./public/fonts/Agbalumo-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./public/fonts/Poppins-Regular.tff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./public/fonts/Poppins-Regular.tff");
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./public/fonts/Poppins-Bold.tff");
+    font-style: normal;
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./public/fonts/Poppins-SemiBold.ttf");
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./public/fonts/Poppins-thin.ttf");
+    font-style: normal;
+    font-weight: 200;
+}

@@ -5,7 +5,9 @@ const postsCollection = defineCollection({
         z.object({
             author: z.string(),
             date: z.string(),
+            excerpt: z.string(),
             image: image(),
+            tags: z.array(z.string()),
             title: z.string()
         }),
 });

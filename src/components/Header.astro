@@ -1,21 +1,45 @@
 ---
 import {Image} from "astro:assets";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 ---
 
-<header class="flex justify-between items-center px-24 py-12 max-sm:px-5 max-sm:py-10 max-w-7xl w-full mx-auto">
-    <a href="/" class="flex items-center gap-x-4">
-        <Image
-            src="/images/y2k-gabes.svg"
-            width={100}
-            height={100}
-            alt="Gabe's Logo"
-            class="rounded aspect-thumbnail object-cover"
-            format="webp"
-        />
-    </a>
-    <ul class="flex gap-x-8">
-        <li><a href="/" class="text-violet-400 font-bold">Home</a></li>
-        <li><a href="/about" class="text-violet-400 font-bold">About</a></li>
-        <li><a href="/blog" class="text-violet-400 font-bold">Blog</a></li>
-    </ul>
+<header class="bottom-0 sm:top-0 sticky sm:bottom-auto top-0 border-b-nav backdrop-blur-sm">
+    <div class="top-0 absolute left-0 w-full bg-topbar"></div>
+    <nav class="flex justify-between items-center px-4 py-4 max-sm:px-5 max-sm:py-10 w-full mx-auto max-w-7xl">
+        
+        <div>
+            <a href="/" class="flex items-center gap-x-4">
+                <Image
+                    src="/images/y2k-gabes.svg"
+                    width={100}
+                    height={72}
+                    alt="Gabe's Logo"
+                    class="rounded aspect-thumbnail object-cover"
+                    format="webp"
+                />
+            </a>
+        </div>
+        <ul class="flex gap-x-8">
+            <li><a href="/" class="text-zinc-200 font-bold text-lg">Home</a></li>
+            <li><a href="/about" class="text-zinc-200 font-bold text-lg">About</a></li>
+            <li><a href="/blog" class="text-zinc-200 font-bold text-lg">Blog</a></li>
+        </ul>
+        <div class="flex items-center">
+            <ThemeSwitcher />
+            <a href="/" class="w-fit px-4 py-1 text-white rounded border-2 border-white font-bold">Get Started</a>
+        </div>
+    </nav>
 </header>
+
+<style>
+    nav img {
+        max-height: 72px;
+    }
+    .border-b-nav {
+        border-bottom: 1px solid rgba(54,54,54,.6);
+    }
+    .bg-topbar {
+        background-image: linear-gradient(102.4deg,#fdbd55 7.8%,#f983ff 100.3%);
+        height: 0.25rem;
+    }
+</style>

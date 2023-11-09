@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Featured from '../components/Featured.astro';
+import BlogList from '../components/BlogList.astro';
 ---
 
-<Layout title="Welcome to Astroworld">
-	<main class="px-24 max-w-7xl mx-auto w-full max-sm-24">
-		<h1 class="text-4xl text-white">Astroworld Blog</h1>
+<Layout title="Code, Lift and Chill">
+	<main class="w-full">
+		<Hero />
+		<Featured />
+		<BlogList />
 	</main>
 </Layout>
 

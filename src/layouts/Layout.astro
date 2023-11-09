@@ -1,6 +1,12 @@
 ---
 import Header from '../components/Header.astro';
 import { ViewTransitions } from 'astro:transitions';
+import '../styles/utils.css';
+import {
+  BackgroundImage,
+  ImageSupportDetection,
+} from "astro-imagetools/components";
+
 interface Props {
 	title: string;
 	description: string;
@@ -20,6 +26,7 @@ const { title, description = "Another developer blog with cool tips and up to da
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
+		<ImageSupportDetection />
 	</head>
 	<body>
 		<Header />
@@ -27,30 +34,19 @@ const { title, description = "Another developer blog with cool tips and up to da
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Agbalumo", system-ui, sans-serif;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+	.font-heading {
+		font-family: "Agbalumo", system-ui, sans-serif;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	p, a {
+		font-family: "Poppins", system-ui, sans-serif;
+	}
+	.color-accent {
+		color: var(--color-primary);
+	}
+	.font-poppins {
+		font-family: "Poppins", system-ui, sans-serif;
 	}
 </style>
