@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../partials/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/utils.css';
 import {
@@ -14,6 +15,11 @@ interface Props {
 }
 
 const { title, description = "Another developer blog with cool tips and up to date tech" } = Astro.props;
+const footerLinks = [
+  { label: 'Home', url: '/' },
+  { label: 'About', url: '/about' },
+  { label: 'Blog', url: '/blog' }
+];
 ---
 
 <!doctype html>
@@ -31,17 +37,19 @@ const { title, description = "Another developer blog with cool tips and up to da
 	<body>
 		<Header />
 		<slot />
+		<Footer footerLinks={footerLinks} />
 	</body>
 </html>
 <style is:global>
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "Agbalumo", system-ui, sans-serif;
+		font-family: "Black", system-ui, sans-serif;
+		font-weight: bold;
 	}
 	.font-heading {
-		font-family: "Agbalumo", system-ui, sans-serif;
+		font-family: "Black", system-ui, sans-serif;
 	}
 	p, a {
-		font-family: "Poppins", system-ui, sans-serif;
+		font-family: "Varela", system-ui, sans-serif;
 	}
 	.color-accent {
 		color: var(--color-primary);

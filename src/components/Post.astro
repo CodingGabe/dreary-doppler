@@ -1,12 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import { type CollectionEntry } from 'astro:conent';
+import { getCollection } from "astro:content";
 
 type Props = {
     post: CollectionEntry<'posts'>;
 };
 
+const posts = await getCollection("posts");
 const { post } = Astro.props;
+const tags = [...new Set(posts.map((post) => post.data.tags).flat())]; // map through all tags on a blog post
 
 ---
 
@@ -17,13 +20,28 @@ const { post } = Astro.props;
             width={1200}
             height={1200 / 1.5}
             alt={post.data.title}
-            class="rounded shadow-xl mt-6 mb-6 aspect-thumbnail object-cover"
+            class="rounded shadow-xl mb-6 aspect-thumbnail object-cover"
         />
     </a>
+    <div class="mb-4">
+        {post.data.tags && post.data.tags.map((tag, index) => (
+            <span key={index} class="category-badge text-xs leading-5 mr-3 inline-block px-2 pb-1 rounded-sm text-zinc-300">{tag}</span>
+        ))}
+    </div>
     <a href={`/blog/${post.slug}`}>
-        <h2 class="text-zinc-300 text-2xl">{post.data.title}</h2>
+        <h2 class="text-zinc-300 text-2xl mb-4">{post.data.title}</h2>
     </a>
-    <p class="text-zinc-300 text-lg line-clamp-2">
-        {post.body}
+    <p class="text-zinc-300 text-lg line-clamp-2 mb-4">
+        {post.data.excerpt}
     </p>
+    <div class="flex items-center space-x-3 text-gray-400">
+        <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0 w-5 h-5">
+                <Image alt="Author Photo" class="rounded-full" width={40} height={40} src={post.data.authorPic} />
+            </div>
+            <span class="text-sm">Gabe Amaya</span>
+            <span class="text-xs text-gray-300 dark:text-gray-600"> •</span>
+            <time class="text-xs">{post.data.date}</time>
+        </div>
+    </div>
 </article>

@@ -22,7 +22,7 @@ const cardTitle = "Blog Post Title";
                 <div class="featured-left-card">
                     <div class="mb-4">
                         {post.data.tags && post.data.tags.map((tag, index) => (
-                            <span key={index} class="category-badge text-xs leading-5 mr-3 inline-block px-2 pb-1 rounded-sm">{tag}</span>
+                            <span key={index} class="category-badge text-xs leading-6 mr-3 inline-block px-2 pb-1 rounded-sm">{tag}</span>
                         ))}
                     </div>
                     <a href={`/blog/${post.slug}`}>

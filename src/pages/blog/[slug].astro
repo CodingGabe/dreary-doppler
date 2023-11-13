@@ -25,16 +25,16 @@ const {Content} = await post.render();
 ---
 
 <Layout title={post.data.title}>
-    <main class="px-24 max-w-7xl mx-auto w-full max-sm-24">
-		<h1 class="text-4xl text-white mb-6">{post.data.title}</h1>
+    <main class="py-20 px-24 max-w-7xl mx-auto w-full max-sm-24">
+		<h1 class="text-7xl text-white text-center">{post.data.title}</h1>
         <Image 
             src={post.data.image}
-            width={1200}
-            height={1200 / 1.5}
+            width={860}
+            height={860 / 1.5}
             alt={post.data.title}
-            class="rounded shadow-xl mt-6 mb-6 aspect-thumbnail object-cover"
+            class="rounded shadow-xl aspect-thumbnail object-cover my-24 block mx-auto"
         />
-        <div class="prose prose-xl prose-zinc dark:prose-invert overflow-visible relative mb-20">
+        <div class="prose prose-xl prose-zinc dark:prose-invert overflow-visible relative mx-auto">
             <Content />
         </div>
 	</main>

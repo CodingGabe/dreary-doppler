@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon';
+type SidebarProps = {
+  sidebarTitle: string;
+  socialLinks: { name: string; url: string; icon: string }[];
+};
+
+const sidebarTitle = "Lets get connected"
+const socialLinks = [
+  { name: 'GitHub', url: 'https://github.com/CodingGabe', icon: './images/github.svg' },
+  { name: 'Instagram', url: 'https://instagram.com/creative.gabe', icon: './images/instagram.svg' },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/gabeamaya', icon: './images/linkedin.svg' },
+];
+---
+
+<aside class="block">
+    <div class="sidebar-content rounded shadow-sm p-6 flex justify-center flex-col text-center">
+        {/* Title */}
+        <h4 class="text-2xl mb-4 text-white sidebar-title">{sidebarTitle}</h4>
+        {/* Social Links */}
+        <!-- <div class="social-links flex gap-x-2">
+            {socialLinks.map((link, index) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer" key={index}>
+                <img src={link.icon} alt={link.name} />
+            </a>
+            ))}
+        </div> -->
+        {/* CTA */}
+        {/* Social Links */}
+        <div class="social-links flex gap-x-4 justify-center mb-6">
+            <a href="https://github.com/CodingGabe" target="_blank" rel="noopener noreferrer">
+                <Icon name="github" />
+            </a>
+            <a href="https://instagram.com/creative.gabe" target="_blank" rel="noopener noreferrer">
+                <Icon name="instagram" />
+            </a>
+            <a href="https://linkedin.com/in/gabeamaya" target="_blank" rel="noopener noreferrer">
+                <Icon name="linkedin" />
+            </a>
+        </div>
+        <a href="mailto:gabeamaya2@gmail.com" class="cta-btn block w-full py-2 px-4 text-zinc-800 font-bold rounded-sm">Contact Me</a>
+    </div>
+</aside>
+
+<style>
+    .social-links svg {
+        min-height: 1.65rem;
+    }
+    [astro-icon] {
+        color: var(--color-primary);
+        /* OR */
+        fill: var(--color-primary);
+    }
+    .sidebar-content {
+        background-color: var(--color-accent-dark);
+    }
+</style>

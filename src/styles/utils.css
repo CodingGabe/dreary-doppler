@@ -18,6 +18,7 @@
 html {
     font-family: system-ui, sans-serif;
     background: rgb(28,28,28);
+    color: rgb(244,244,244);
 }
 code {
     font-family:
@@ -55,6 +56,18 @@ code {
     font-weight: 800;
 }
 @font-face {
+    font-family: "Cera";
+    src: url("./public/fonts/cera-round-bold.otf");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Cera";
+    src: url("./public/fonts/cera-round-reg.woff");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
     font-family: "Poppins";
     src: url("./public/fonts/Poppins-SemiBold.ttf");
     font-style: normal;
@@ -65,4 +78,19 @@ code {
     src: url("./public/fonts/Poppins-thin.ttf");
     font-style: normal;
     font-weight: 200;
+}
+@font-face {
+    font-family: "Varela";
+    src: url("./public/fonts/Varela-Reg.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Black";
+    src: url("./public/fonts/mplus-black.ttf");
+    font-style: normal;
+    font-weight: bold;
+}
+.cta-btn {
+    background-color: var(--color-primary);
 }
