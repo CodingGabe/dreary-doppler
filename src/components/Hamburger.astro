@@ -1,0 +1,32 @@
+---
+---
+<div class="hamburger ml-4 cursor-pointer md:hidden" onclick="toggleMobileMenu()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+</div>
+
+<style>
+    /* nav styles */
+    .hamburger {
+        padding-right: 20px;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        display: block;
+        width: 40px;
+        height: 5px;
+        background-color: var(--color-primary);
+    }
+    .hamburger .line:not(:last-child) {
+        margin-bottom: 10px;
+    }
+</style>
+
+<script setup>
+    function toggleMobileMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    }
+</script>

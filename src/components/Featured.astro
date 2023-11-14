@@ -18,7 +18,7 @@ const cardTitle = "Blog Post Title";
 <section class="flex py-16">
     <div class="container mx-auto px-4">
         {post ? (
-            <article class="featured-card text-white max-w-3xl mx-auto grid grid-cols-2 gap-8 items-center p-8 rounded shadow relative z-10">
+            <article class="featured-card text-white max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 rounded shadow">
                 <div class="featured-left-card">
                     <div class="mb-4">
                         {post.data.tags && post.data.tags.map((tag, index) => (
@@ -55,9 +55,14 @@ const cardTitle = "Blog Post Title";
 <style>
     .featured-card {
         background-color: var(--color-accent-dark);
-        margin-top: -6rem
+        margin-top: -3.5rem;
     }
     .category-badge {
-        background-color: var(--color-jungle)
-;    }
+        background-color: var(--color-jungle);
+    }
+    @media (min-width: 576px) {
+        .featured-card {
+            margin-top: -6rem;
+        }
+    }
 </style>

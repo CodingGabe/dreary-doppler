@@ -1,12 +1,12 @@
 ---
 import {Image} from "astro:assets";
 import ThemeSwitcher from "../components/ThemeSwitcher.astro";
+import Hamburger from './Hamburger.astro';
 ---
 
 <header class="bottom-0 sm:top-0 sticky sm:bottom-auto top-0 border-b-nav backdrop-blur-sm">
     <div class="top-0 absolute left-0 w-full bg-topbar"></div>
-    <nav class="flex justify-between items-center px-4 py-4 max-sm:px-5 max-sm:py-10 w-full mx-auto max-w-7xl">
-        
+    <nav class="flex justify-between items-center px-4 py-4 max-sm:px-5 max-sm:py-4 w-full mx-auto max-w-7xl z-20 relative">
         <div>
             <a href="/" class="flex items-center gap-x-4">
                 <Image
@@ -19,14 +19,21 @@ import ThemeSwitcher from "../components/ThemeSwitcher.astro";
                 />
             </a>
         </div>
-        <ul class="flex gap-x-8">
+        <ul class="flex gap-x-8 nav-links">
             <li><a href="/" class="text-zinc-200 font-bold text-lg">Home</a></li>
             <li><a href="/about" class="text-zinc-200 font-bold text-lg">About</a></li>
             <li><a href="/blog" class="text-zinc-200 font-bold text-lg">Blog</a></li>
         </ul>
-        <div class="flex items-center">
-            <ThemeSwitcher />
+        <div class="flex items-center max-sm:hidden">
             <a href="/" class="w-fit px-4 py-1 text-white rounded border-2 border-white font-bold">Get Started</a>
+        </div>
+        <Hamburger />
+        <div class="mobile-menu lg:hidden hidden p-4">
+            <ul class="flex flex-col items-center text-white">
+                <li><a href="/" class="py-2">Home</a></li>
+                <li><a href="/about" class="py-2">About</a></li>
+                <li><a href="/blog" class="py-2">Blog</a></li>
+            </ul>
         </div>
     </nav>
 </header>
@@ -41,5 +48,67 @@ import ThemeSwitcher from "../components/ThemeSwitcher.astro";
     .bg-topbar {
         background-image: linear-gradient(102.4deg,#fdbd55 7.8%,#f983ff 100.3%);
         height: 0.25rem;
+    }
+    .expanded {
+        display: unset;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+
+    @media screen and (min-width: 636px) {
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 15px 20px;
+        }
+
+        .hamburger {
+            display: none;
+        }
+        nav img {
+        max-height: 72px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .mobile-menu {
+            position: absolute;
+            top: 105px; /* Adjust this value based on your header height */
+            left: 0;
+            right: 0;
+            background-color: var(--color-accent-dark);
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            padding-bottom: 1em;
+        }
+        .mobile-menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .mobile-menu.hidden {
+            display: none;
+        }
+        .mobile-menu:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
